@@ -1,0 +1,12 @@
+executable = WR#mWR#N#mN#.sh
+#arguments = test_cfg.py
+JobBatchName = WRtoNLtoLLJJ_WR#mWR#_N#mN#_tau
+log = $(JobBatchName)/job.log
+input = /data9/Users/youngwan/WRStudy/SignalSampleStudy/CMSSW_11_2_0_pre7/src/Configuration/WMassNanoGen/configs/WR#mWR#N#mN#.py 
+output = $(JobBatchName)/job$(process).out
+error = $(JobBatchName)/job$(process).err
+getenv = True
+should_transfer_files = yes
+when_to_transfer_output = on_exit
+transfer_output_remaps = "$(JobBatchName).root = $(JobBatchName)/$(JobBatchName)_$(process).root"
+queue 200
